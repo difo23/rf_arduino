@@ -17,6 +17,7 @@ void setup()
     rf_driver.init();
     // Setup Serial Monitor
     Serial.begin(9600);
+    pinMode(7, OUTPUT);
 }
 
 void loop()
@@ -29,7 +30,28 @@ void loop()
     {
       
       // Message received with valid checksum
+      
       Serial.print("Message Received: ");
-      Serial.println((char*)buf);         
+    
+      
+      char* rec = (char*)buf;
+      int cases = int(rec[0]);
+      
+      Serial.println(cases);
+      switch(cases) {
+        
+        case 48:
+           digitalWrite(7, LOW);
+        break;
+        
+        case 49:
+           digitalWrite(7, HIGH);
+        break;
+        
+        default:
+         Serial.println("Default case");
+        break;
+      
+      }      
     }
 }
