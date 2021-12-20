@@ -11,6 +11,8 @@
 // Create Amplitude Shift Keying Object
 RH_ASK rf_driver;
 
+// PIN DIGITAL 11
+
 void setup()
 {
     // Initialize ASK Object

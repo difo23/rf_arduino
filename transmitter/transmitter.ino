@@ -17,6 +17,8 @@ void setup()
     rf_driver.init();
 }
 
+
+// PIN DIGITAL 12
 void loop()
 {
 
